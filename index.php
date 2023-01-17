@@ -17,7 +17,53 @@
     <!--header-->
 
     <!--button Add Person-->
-    <button type="button" class="btn btn-success mt-4"><i class="bi bi-plus"></i>Add Person</button>
+    <button 
+      type="button"
+      class="btn btn-success mt-4"
+      data-bs-toggle="modal"
+      data-bs-target="#cadUsuarioModal"><i class="bi bi-plus"></i>
+        Add Person
+    </button>
+
+    <span id="msgAlerta"></span>
+
+    <!-- Modal -->
+    <div class="modal fade" id="cadUsuarioModal" tabindex="-1" aria-labelledby="cadUsuarioModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="cadUsuarioModalLabel">Cadastrar Usuário</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <span id="msgAlertErroCad"></span>
+          <form method="POST" id="form-cad-usuario">
+            <div class="mb-3">
+              <label for="firt_name" class="form-label">Primeiro Nome:</label>
+              <input type="text" id="firt_name" name="firt_name" class="form-control" placeholder="Digite o Primeiro nome">
+            </div>
+            <div class="mb-3">
+              <label for="last_name" class="form-label">Sobrenome:</label>
+              <input type="text" id="last_name" name="last_name" class="form-control" placeholder="Digite o Sobrenome">
+            </div>
+            <div class="mb-3">
+              <label for="gender" class="form-label">Sexo:</label>
+              <input type="text" id="gender" name="gender" class="form-control" placeholder="Digite o Sexo">
+            </div>
+            <div class="mb-3">
+              <label for="adress" class="form-label">Endreço:</label>
+              <input type="text" id="adress" name="adress" class="form-control" placeholder="Digite o endereço/local">
+            </div>
+            <div class="mb-3">
+              <label for="birthday" class="form-label">Data Nascimento:</label>
+              <input type="text" id="birthday" name="birthday" class="form-control" placeholder="Digite o Ano de nascimento">
+            </div>
+            <button type="submit" class="btn btn-outline-success btn-sm" value="Cadastrar">Cadastrar</button>
+          </form>
+          </div>
+        </div>
+      </div>
+    </div>
     <!--button Add Person-->
 
     <!--Show options abd Searc
@@ -94,14 +140,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
   <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
-  <script>
-    $(document).ready(function () {
-      $('#listar_usuario').DataTable({
-          processing: true,
-          serverSide: true,
-          ajax: "listar_usuario.php",
-      });
-    });
-  </script>
+  <script src="js/custom.js"></script>
 </body>
 </html>
